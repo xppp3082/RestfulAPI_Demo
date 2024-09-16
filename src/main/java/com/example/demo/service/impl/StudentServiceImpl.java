@@ -1,5 +1,6 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.exception.CustomDatabaseException;
 import com.example.demo.model.Student;
 import com.example.demo.repo.StudentRepository;
 import com.example.demo.service.StudentService;
@@ -26,7 +27,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student createStudent(Student student) {
+    public Student createStudent(Student student) throws CustomDatabaseException {
         return studentRepository.insertStudent(student);
     }
 
